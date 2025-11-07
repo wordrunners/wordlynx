@@ -23,6 +23,7 @@ TypeScript, Canvas API, React, Redux, nginx, Git, GitHub Actions, Docker, Vite, 
 ## Basic commands
 
 Before the first run:
+```yarn install```
 ```node init.js```
 
 ### How do I start developing in hot-reload mode with a DB in Docker?

@@ -22,21 +22,21 @@ export const LeaderboardPage = (): JSX.Element => {
       dispatch(fetchLeaderboard());
     }
   }, [user]);
-  
+
   const currentLeader: Leader = leaders.find(item => item.data.id === user?.id) || {} as Leader;
 
   const sortedLeaders: Leaders = [...leaders].sort((a, b) => b.data.score - a.data.score);
 
-  const isCurrentLeaderInLeaders: boolean = sortedLeaders.slice(0,3).includes(currentLeader);
+  const isCurrentLeaderInLeaders: boolean = sortedLeaders.slice(0, 3).includes(currentLeader);
   const currentLeaderPlace: number = sortedLeaders.indexOf(currentLeader) + 1;
 
   return (
     <section className='leaderboard'>
-      <LinkButton to='/' modifier='header-btn'>Назад</LinkButton>
+      <LinkButton to='/' modifier='header-btn'>Back</LinkButton>
       <div className='leaderboard__wrapper'>
         <div className='leaderboard__header'>
           <img src={Rule} className='leaderboard__icon' />
-          <h2 className='leaderboard__title'>ЛИДЕРЫ</h2>
+          <h2 className='leaderboard__title'>Leaders</h2>
           <img src={Bag} className='leaderboard__icon leaderboard__icon_rotated' />
         </div>
         {loading
@@ -44,13 +44,13 @@ export const LeaderboardPage = (): JSX.Element => {
           : (
             <>
               <div className='leaderboard__list'>
-                {sortedLeaders.slice(0,3).map((leader: Leader, idx: number) => (
-                  <LeaderboardRow key={leader.data.id} leader={leader} place={idx + 1} currentLeader={currentLeader}/>
+                {sortedLeaders.slice(0, 3).map((leader: Leader, idx: number) => (
+                  <LeaderboardRow key={leader.data.id} leader={leader} place={idx + 1} currentLeader={currentLeader} />
                 ))}
               </div>
-                {currentLeader.data && !isCurrentLeaderInLeaders &&
-                  <LeaderboardRow leader={currentLeader} place={currentLeaderPlace} currentLeader={currentLeader}/>
-                }
+              {currentLeader.data && !isCurrentLeaderInLeaders &&
+                <LeaderboardRow leader={currentLeader} place={currentLeaderPlace} currentLeader={currentLeader} />
+              }
             </>
           )
         }

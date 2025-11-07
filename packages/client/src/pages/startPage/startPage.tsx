@@ -5,13 +5,13 @@ import { LinkButton } from '@/components/LinkButton';
 import { Button } from '@/components/Button';
 import { Header } from '@/components/Header';
 import { useEffect } from 'react'
-import { 
+import {
   useAppDispatch,
   useAuth
 } from '@/hooks'
 import { logout, signinOAuth } from '@/store/authSlice';
 import { addPlayer } from '@/pages/gamePage/game/core/gameSlice';
-import { 
+import {
   SIGNIN_ROUTE,
   GAME_ROUTE
 } from '@/data/routes'
@@ -19,10 +19,10 @@ import {
 export const StartPage = (): JSX.Element => {
   const dispatch = useAppDispatch()
   const { isAuth } = useAuth()
-  
+
   function onExit() {
     dispatch(logout());
-    dispatch(addPlayer({  
+    dispatch(addPlayer({
       'login': '',
       'words': [],
       'score': 0,
@@ -45,13 +45,13 @@ export const StartPage = (): JSX.Element => {
       <Header />
       <div className={cn('start__wrapper')}>
         <img src={Logo} alt='logo' className={cn('start__logo')} />
-        <LinkButton to={GAME_ROUTE} modifier='game-btn'>НАЧАТЬ ИГРУ</LinkButton>
+        <LinkButton to={GAME_ROUTE} modifier='game-btn'>START GAME</LinkButton>
         {isAuth ? (
-          <Button className="exit-btn" onClick={onExit}>ВЫЙТИ</Button>
+          <Button className="exit-btn" onClick={onExit}>EXIT</Button>
         ) : (
-          <LinkButton to={SIGNIN_ROUTE} modifier='login-btn'>ВОЙТИ</LinkButton>
+          <LinkButton to={SIGNIN_ROUTE} modifier='login-btn'>LOGIN</LinkButton>
         )}
-      </div> 
+      </div>
     </section>
   )
 };

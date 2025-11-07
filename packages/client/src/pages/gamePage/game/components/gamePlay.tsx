@@ -1,9 +1,9 @@
-import { useRef, useEffect, useState} from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { 
-  CanvasContext, 
-  useAppSelector, 
-  useAppDispatch 
+import {
+  CanvasContext,
+  useAppSelector,
+  useAppDispatch
 } from '@/hooks'
 import {
   deleteLetter,
@@ -38,17 +38,17 @@ import {
 } from '../core/gameSlice'
 
 import { Game } from '../core/game'
-import { 
+import {
   correctPixels,
 } from '../helpers'
-import { 
+import {
   ROUNDS,
   BUMBLE,
 } from '@/data/consts'
 
 import cardsData from '@/data/cards.json'
 import playersData from '@/data/players.json'
-import { dictionary } from '@/data/dictionary'
+import { dictionary } from '@/data/google-10000-english'
 import { fetchLeaderboard } from '@/store/leaderBoardSlice'
 import { selectUser } from '@/store/authSlice'
 
@@ -80,7 +80,7 @@ export const GamePlay = () => {
     if (totalPlayers === -1) {
       navigate(`/game`)
     }
-    const context = canvasRef.current?.getContext('2d',{willReadFrequently:true})
+    const context = canvasRef.current?.getContext('2d', { willReadFrequently: true })
     if (context) {
       setContext(context)
 
@@ -98,7 +98,7 @@ export const GamePlay = () => {
         }
       } else if (settings === 'online') {
         dispatch(fetchLeaderboard());
-        userState.login && dispatch(addPlayer({  
+        userState.login && dispatch(addPlayer({
           'login': userState.login,
           'words': [],
           'score': 0,
@@ -106,15 +106,16 @@ export const GamePlay = () => {
         }))
       }
       for (let i = 0; i <= ((totalPlayers + 1) * ROUNDS - 1); i++) {
-        newCards.push(cardsData[i])
+        newCards.push(cardsData[Math.floor(Math.random() * cardsData.length)])
       }
+      console.log(newCards);
       dispatch(setCards(newCards))
       dispatch(setActiveCard(0))
       dispatch(setEnabledSectors())
     }
   }, [])
 
-  const handleCanvasMove = (event: React.MouseEvent<HTMLElement>)=>{
+  const handleCanvasMove = (event: React.MouseEvent<HTMLElement>) => {
     if ((context) && (card) && (cards)) {
       const mousePos = { x: event.clientX, y: event.clientY }
       const pixels = context.getImageData(mousePos.x, mousePos.y, 12, 12).data
@@ -134,7 +135,7 @@ export const GamePlay = () => {
     }
   }
 
-  const handleCanvasClick = (event: React.MouseEvent<HTMLElement>)=>{
+  const handleCanvasClick = (event: React.MouseEvent<HTMLElement>) => {
     if ((context) && (card) && (cards)) {
       const card = cards[activeCard]
       const mousePos = { x: event.clientX, y: event.clientY }
@@ -156,8 +157,8 @@ export const GamePlay = () => {
                 dispatch(clearPoints())
                 dispatch(nextActiveCard())
                 dispatch(setEnabledSectors())
-  
-                if (activeCard === ((totalPlayers + 1) * ROUNDS -1)) {
+
+                if (activeCard === ((totalPlayers + 1) * ROUNDS - 1)) {
                   navigate('/game-over')
                 }
               } else {
@@ -168,7 +169,7 @@ export const GamePlay = () => {
               }
             }
           })
-        }  else if (sector < 9) {
+        } else if (sector < 9) {
           dispatch(addLetter(`${sector}`))
           dispatch(countPoints())
         } else if ((sector === 9) && (word)) {
@@ -183,11 +184,11 @@ export const GamePlay = () => {
     return (
       <CanvasContext.Provider value={{ context: context }}>
         <canvas
-          ref={ canvasRef }
-          width={ width }
-          height={ height }
-          onClick={ handleCanvasClick }
-          onMouseMove={ handleCanvasMove }
+          ref={canvasRef}
+          width={width}
+          height={height}
+          onClick={handleCanvasClick}
+          onMouseMove={handleCanvasMove}
         ></canvas>
         <Game />
       </CanvasContext.Provider>

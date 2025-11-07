@@ -11,7 +11,7 @@ type Props = {
   boardId: number
 }
 
-export const FormBox: FC<Props> = ({parentId, boardId}): JSX.Element => {
+export const FormBox: FC<Props> = ({ parentId, boardId }): JSX.Element => {
   const dispatch = useAppDispatch();
   const { user } = useAuth();
 
@@ -39,7 +39,7 @@ export const FormBox: FC<Props> = ({parentId, boardId}): JSX.Element => {
       userLogin: user.login,
       comment: '',
     }
-  
+
     return (
       <Formik
         initialValues={initial}
@@ -47,35 +47,35 @@ export const FormBox: FC<Props> = ({parentId, boardId}): JSX.Element => {
       >
         {({ errors, touched }) => (
           <Form className="forum__form forum__form_comments">
-            {parentId ? ( 
-                <>
-                  <Field
-                    id="newСomment"
-                    name="comment"
-                    title="newСomment"
-                    type='text'
-                    placeholder="Ответ"
-                    key="newСomment"
-                    className="forum__field forum__field_answer"
-                  />   
-                  <Button type="submit" className="forum__button forum__button_comments">Ответить</Button>
-                </> 
-              ) : (
-                <>
-                  <Field
-                    id="newСomment"
-                    name="comment"
-                    title="newСomment"
-                    type='text'
-                    placeholder="Комментарий"
-                    key="newСomment"
-                    className="forum__field forum__field_comments"
-                  />   
-                  <Button type="submit" className="forum__button forum__button_comments">
-                    Комментировать
-                  </Button>
-                </>
-              )
+            {parentId ? (
+              <>
+                <Field
+                  id="newComment"
+                  name="comment"
+                  title="newComment"
+                  type='text'
+                  placeholder="Reply"
+                  key="newComment"
+                  className="forum__field forum__field_answer"
+                />
+                <Button type="submit" className="forum__button forum__button_comments">Reply</Button>
+              </>
+            ) : (
+              <>
+                <Field
+                  id="newComment"
+                  name="comment"
+                  title="newComment"
+                  type='text'
+                  placeholder="Comment"
+                  key="newComment"
+                  className="forum__field forum__field_comments"
+                />
+                <Button type="submit" className="forum__button forum__button_comments">
+                  Comment
+                </Button>
+              </>
+            )
             }
           </Form>
         )}

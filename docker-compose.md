@@ -1,4 +1,4 @@
-Содержание файла docker compose на ВМ в YC
+Contents of the docker compose file on a VM in YC
 
 version: "3.9"
 
@@ -27,9 +27,9 @@ services:
       image: cr.yandex/***/practicum-server:latest
       restart: always
       ports:
-          - "5000:5000"
+          - "3001:3001"
       environment:
-        SERVER_PORT: 5000
+        SERVER_PORT: 3001
         POSTGRES_HOST: postgres
         POSTGRES_PORT: 5432
         POSTGRES_USER: ***

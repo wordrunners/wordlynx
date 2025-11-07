@@ -1,223 +1,472 @@
 [
-  [  
-    {"letter": "Е", "set": 2, "point": 1},  
-    {"letter": "Е", "set": 1, "point": 1}, 
-    {"letter": "Ш", "set": 3, "point": 2}, 
-    {"letter": "А", "set": 1, "point": 1},
-    {"letter": "Л", "set": 2, "point": 1}, 
-    {"letter": "Ц", "set": 3, "point": 2}, 
-    {"letter": "Н", "set": 1, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 2}, 
-    {"letter": "П", "set": 2, "point": 1}
+  [
+    {
+      "letter": "E",
+      "set": 2,
+      "point": 1
+    },
+    {
+      "letter": "A",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "R",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "T",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "L",
+      "set": 2,
+      "point": 1
+    },
+    {
+      "letter": "N",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "S",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "O",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "I",
+      "set": 2,
+      "point": 1
+    }
   ],
-  [  
-    {"letter": "С", "set": 1, "point": 1},  
-    {"letter": "Е", "set": 3, "point": 2}, 
-    {"letter": "О", "set": 2, "point": 1}, 
-    {"letter": "Н", "set": 1, "point": 1},
-    {"letter": "А", "set": 3, "point": 1}, 
-    {"letter": "Е", "set": 1, "point": 2}, 
-    {"letter": "Т", "set": 2, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 1}, 
-    {"letter": "Р", "set": 2, "point": 1}
+  [
+    {
+      "letter": "M",
+      "set": 2,
+      "point": 2
+    },
+    {
+      "letter": "A",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "R",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "C",
+      "set": 1,
+      "point": 2
+    },
+    {
+      "letter": "O",
+      "set": 2,
+      "point": 1
+    },
+    {
+      "letter": "N",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "E",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "T",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "I",
+      "set": 2,
+      "point": 1
+    }
   ],
-  [  
-    {"letter": "В", "set": 2, "point": 2},  
-    {"letter": "Н", "set": 1, "point": 1}, 
-    {"letter": "Т", "set": 3, "point": 2}, 
-    {"letter": "А", "set": 2, "point": 1},
-    {"letter": "К", "set": 1, "point": 1}, 
-    {"letter": "Л", "set": 3, "point": 1}, 
-    {"letter": "Г", "set": 1, "point": 3}, 
-    {"letter": "А", "set": 3, "point": 1}, 
-    {"letter": "А", "set": 2, "point": 1}
+  [
+    {
+      "letter": "P",
+      "set": 2,
+      "point": 2
+    },
+    {
+      "letter": "A",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "L",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "E",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "R",
+      "set": 2,
+      "point": 1
+    },
+    {
+      "letter": "S",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "O",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "N",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "D",
+      "set": 2,
+      "point": 2
+    }
   ],
-  [  
-    {"letter": "Ф", "set": 2, "point": 2},  
-    {"letter": "Ш", "set": 1, "point": 2}, 
-    {"letter": "С", "set": 3, "point": 1}, 
-    {"letter": "Т", "set": 1, "point": 1},
-    {"letter": "Р", "set": 3, "point": 1}, 
-    {"letter": "И", "set": 2, "point": 1}, 
-    {"letter": "А", "set": 1, "point": 1}, 
-    {"letter": "К", "set": 3, "point": 2}, 
-    {"letter": "А", "set": 2, "point": 1}
+  [
+    {
+      "letter": "T",
+      "set": 2,
+      "point": 1
+    },
+    {
+      "letter": "H",
+      "set": 1,
+      "point": 2
+    },
+    {
+      "letter": "E",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "A",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "R",
+      "set": 2,
+      "point": 1
+    },
+    {
+      "letter": "S",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "O",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "N",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "G",
+      "set": 2,
+      "point": 2
+    }
   ],
-  [  
-    {"letter": "Р", "set": 2, "point": 1},  
-    {"letter": "О", "set": 1, "point": 1}, 
-    {"letter": "Д", "set": 3, "point": 2}, 
-    {"letter": "Г", "set": 2, "point": 1},
-    {"letter": "Н", "set": 1, "point": 1}, 
-    {"letter": "Е", "set": 2, "point": 1}, 
-    {"letter": "О", "set": 1, "point": 1}, 
-    {"letter": "А", "set": 3, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 1}
+  [
+    {
+      "letter": "C",
+      "set": 2,
+      "point": 2
+    },
+    {
+      "letter": "A",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "M",
+      "set": 3,
+      "point": 2
+    },
+    {
+      "letter": "P",
+      "set": 1,
+      "point": 2
+    },
+    {
+      "letter": "O",
+      "set": 2,
+      "point": 1
+    },
+    {
+      "letter": "S",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "E",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "R",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "T",
+      "set": 2,
+      "point": 1
+    }
   ],
-  [  
-    {"letter": "В", "set": 2, "point": 1},  
-    {"letter": "И", "set": 1, "point": 1}, 
-    {"letter": "Д", "set": 2, "point": 1}, 
-    {"letter": "Н", "set": 1, "point": 1},
-    {"letter": "Е", "set": 3, "point": 1}, 
-    {"letter": "И", "set": 2, "point": 1}, 
-    {"letter": "Е", "set": 1, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 1}, 
-    {"letter": "Ж", "set": 3, "point": 1}
+  [
+    {
+      "letter": "L",
+      "set": 2,
+      "point": 1
+    },
+    {
+      "letter": "I",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "G",
+      "set": 2,
+      "point": 2
+    },
+    {
+      "letter": "H",
+      "set": 1,
+      "point": 2
+    },
+    {
+      "letter": "T",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "A",
+      "set": 2,
+      "point": 1
+    },
+    {
+      "letter": "E",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "R",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "N",
+      "set": 2,
+      "point": 1
+    }
   ],
-  [  
-    {"letter": "П", "set": 2, "point": 1},  
-    {"letter": "Е", "set": 1, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 1}, 
-    {"letter": "О", "set": 1, "point": 1},
-    {"letter": "Н", "set": 2, "point": 1}, 
-    {"letter": "А", "set": 3, "point": 1}, 
-    {"letter": "Е", "set": 1, "point": 1}, 
-    {"letter": "С", "set": 3, "point": 3}, 
-    {"letter": "Д", "set": 2, "point": 1}
+  [
+    {
+      "letter": "B",
+      "set": 2,
+      "point": 2
+    },
+    {
+      "letter": "E",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "A",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "U",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "T",
+      "set": 2,
+      "point": 1
+    },
+    {
+      "letter": "I",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "F",
+      "set": 1,
+      "point": 2
+    },
+    {
+      "letter": "L",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "S",
+      "set": 2,
+      "point": 1
+    }
   ],
-  [  
-    {"letter": "Т", "set": 2, "point": 1},  
-    {"letter": "К", "set": 1, "point": 1}, 
-    {"letter": "А", "set": 3, "point": 1}, 
-    {"letter": "Р", "set": 1, "point": 1},
-    {"letter": "К", "set": 2, "point": 1}, 
-    {"letter": "Ш", "set": 3, "point": 3}, 
-    {"letter": "А", "set": 1, "point": 1}, 
-    {"letter": "О", "set": 3, "point": 1}, 
-    {"letter": "С", "set": 2, "point": 1}
+  [
+    {
+      "letter": "D",
+      "set": 2,
+      "point": 2
+    },
+    {
+      "letter": "E",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "S",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "I",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "G",
+      "set": 2,
+      "point": 2
+    },
+    {
+      "letter": "N",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "A",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "R",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "T",
+      "set": 2,
+      "point": 1
+    }
   ],
-  [  
-    {"letter": "О", "set": 2, "point": 1},  
-    {"letter": "Н", "set": 1, "point": 1}, 
-    {"letter": "З", "set": 3, "point": 1}, 
-    {"letter": "А", "set": 1, "point": 1},
-    {"letter": "Б", "set": 2, "point": 1}, 
-    {"letter": "Л", "set": 3, "point": 1}, 
-    {"letter": "Ь", "set": 1, "point": 1}, 
-    {"letter": "Е", "set": 3, "point": 1}, 
-    {"letter": "Я", "set": 2, "point": 3}
+  [
+    {
+      "letter": "C",
+      "set": 2,
+      "point": 2
+    },
+    {
+      "letter": "O",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "M",
+      "set": 3,
+      "point": 2
+    },
+    {
+      "letter": "P",
+      "set": 1,
+      "point": 2
+    },
+    {
+      "letter": "U",
+      "set": 2,
+      "point": 1
+    },
+    {
+      "letter": "T",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "E",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "R",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "S",
+      "set": 2,
+      "point": 1
+    }
   ],
-  [  
-    {"letter": "А", "set": 2, "point": 1},  
-    {"letter": "М", "set": 1, "point": 1}, 
-    {"letter": "К", "set": 3, "point": 2}, 
-    {"letter": "Р", "set": 1, "point": 2},
-    {"letter": "Г", "set": 2, "point": 1}, 
-    {"letter": "А", "set": 3, "point": 2}, 
-    {"letter": "Ш", "set": 1, "point": 1}, 
-    {"letter": "Д", "set": 3, "point": 1}, 
-    {"letter": "О", "set": 2, "point": 1}
-  ],
-  [  
-    {"letter": "П", "set": 2, "point": 1},  
-    {"letter": "А", "set": 1, "point": 1}, 
-    {"letter": "Ц", "set": 3, "point": 2}, 
-    {"letter": "Ш", "set": 1, "point": 2},
-    {"letter": "Н", "set": 2, "point": 1}, 
-    {"letter": "Е", "set": 3, "point": 1}, 
-    {"letter": "Л", "set": 1, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 2}, 
-    {"letter": "Е", "set": 2, "point": 1}
-  ],
-  [  
-    {"letter": "Т", "set": 2, "point": 1},  
-    {"letter": "И", "set": 1, "point": 1}, 
-    {"letter": "Р", "set": 3, "point": 1}, 
-    {"letter": "О", "set": 1, "point": 1},
-    {"letter": "Е", "set": 2, "point": 2}, 
-    {"letter": "С", "set": 3, "point": 1}, 
-    {"letter": "Е", "set": 1, "point": 2}, 
-    {"letter": "Н", "set": 3, "point": 1}, 
-    {"letter": "А", "set": 2, "point": 1}
-  ],
-  [  
-    {"letter": "П", "set": 2, "point": 2},  
-    {"letter": "К", "set": 1, "point": 1}, 
-    {"letter": "Н", "set": 3, "point": 1}, 
-    {"letter": "А", "set": 1, "point": 1},
-    {"letter": "И", "set": 2, "point": 1}, 
-    {"letter": "Т", "set": 3, "point": 2}, 
-    {"letter": "М", "set": 1, "point": 1}, 
-    {"letter": "А", "set": 3, "point": 1}, 
-    {"letter": "Я", "set": 2, "point": 1}
-  ],
-  [  
-    {"letter": "Е", "set": 2, "point": 1},  
-    {"letter": "Е", "set": 1, "point": 1}, 
-    {"letter": "Х", "set": 3, "point": 2}, 
-    {"letter": "А", "set": 1, "point": 1},
-    {"letter": "Д", "set": 3, "point": 2}, 
-    {"letter": "Р", "set": 2, "point": 1}, 
-    {"letter": "П", "set": 1, "point": 1}, 
-    {"letter": "А", "set": 3, "point": 1}, 
-    {"letter": "Ч", "set": 2, "point": 1}
-  ],
-  [  
-    {"letter": "9", "set": 2, "point": 1},  
-    {"letter": "Y", "set": 1, "point": 1}, 
-    {"letter": "Z", "set": 3, "point": 2}, 
-    {"letter": "А", "set": 1, "point": 1},
-    {"letter": "Л", "set": 2, "point": 1}, 
-    {"letter": "Ц", "set": 3, "point": 2}, 
-    {"letter": "Н", "set": 1, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 2}, 
-    {"letter": "П", "set": 2, "point": 1}
-  ],
-  [  
-    {"letter": "1", "set": 2, "point": 1},  
-    {"letter": "0", "set": 1, "point": 1}, 
-    {"letter": "Z", "set": 3, "point": 2}, 
-    {"letter": "А", "set": 1, "point": 1},
-    {"letter": "Л", "set": 2, "point": 1}, 
-    {"letter": "Ц", "set": 3, "point": 2}, 
-    {"letter": "Н", "set": 1, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 2}, 
-    {"letter": "П", "set": 2, "point": 1}
-  ],
-  [  
-    {"letter": "1", "set": 2, "point": 1},  
-    {"letter": "1", "set": 1, "point": 1}, 
-    {"letter": "Z", "set": 3, "point": 2}, 
-    {"letter": "А", "set": 1, "point": 1},
-    {"letter": "Л", "set": 2, "point": 1}, 
-    {"letter": "Ц", "set": 3, "point": 2}, 
-    {"letter": "Н", "set": 1, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 2}, 
-    {"letter": "П", "set": 2, "point": 1}
-  ],
-  [  
-    {"letter": "1", "set": 2, "point": 1},  
-    {"letter": "2", "set": 1, "point": 1}, 
-    {"letter": "Z", "set": 3, "point": 2}, 
-    {"letter": "А", "set": 1, "point": 1},
-    {"letter": "Л", "set": 2, "point": 1}, 
-    {"letter": "Ц", "set": 3, "point": 2}, 
-    {"letter": "Н", "set": 1, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 2}, 
-    {"letter": "П", "set": 2, "point": 1}
-  ],
-  [  
-    {"letter": "1", "set": 2, "point": 1},  
-    {"letter": "3", "set": 1, "point": 1}, 
-    {"letter": "Z", "set": 3, "point": 2}, 
-    {"letter": "А", "set": 1, "point": 1},
-    {"letter": "Л", "set": 2, "point": 1}, 
-    {"letter": "Ц", "set": 3, "point": 2}, 
-    {"letter": "Н", "set": 1, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 2}, 
-    {"letter": "П", "set": 2, "point": 1}
-  ],
-  [  
-    {"letter": "1", "set": 2, "point": 1},  
-    {"letter": "4", "set": 1, "point": 1}, 
-    {"letter": "Z", "set": 3, "point": 2}, 
-    {"letter": "А", "set": 1, "point": 1},
-    {"letter": "Л", "set": 2, "point": 1}, 
-    {"letter": "Ц", "set": 3, "point": 2}, 
-    {"letter": "Н", "set": 1, "point": 1}, 
-    {"letter": "И", "set": 3, "point": 2}, 
-    {"letter": "П", "set": 2, "point": 1}
+  [
+    {
+      "letter": "J",
+      "set": 2,
+      "point": 3
+    },
+    {
+      "letter": "A",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "V",
+      "set": 3,
+      "point": 2
+    },
+    {
+      "letter": "S",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "C",
+      "set": 2,
+      "point": 2
+    },
+    {
+      "letter": "R",
+      "set": 3,
+      "point": 1
+    },
+    {
+      "letter": "I",
+      "set": 1,
+      "point": 1
+    },
+    {
+      "letter": "P",
+      "set": 3,
+      "point": 2
+    },
+    {
+      "letter": "T",
+      "set": 2,
+      "point": 1
+    }
   ]
 ]
-

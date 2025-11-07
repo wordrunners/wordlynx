@@ -14,11 +14,13 @@
   font-size: 1.5rem;
   font-weight: bold;
   display: flex;
+
   & .title {
     margin-left: 1rem;
     letter-spacing: 0.2rem;
     color: var(--background);
   }
+
   & .link {
     margin: 0 1rem 0 auto;
     color: var(--word1);
@@ -31,7 +33,7 @@
   display: none;
 }
 
-/* Для смартфонов */
+/* For smartphones */
 @media screen and (max-width: 460px) {
   .container {
     margin: 10px;
@@ -44,22 +46,20 @@
     margin: 0px 4px;
     font-size: 1rem;
     font-weight: bold;
-  }  
+  }
 
   .subforum-devider {
     display: block;
     border: 0;
     height: 1px;
-    background-image: linear-gradient(
-      to right,
-      rgba(190, 190, 190, 0),
-      rgba(255, 255, 255, 0.75),
-      rgba(190, 190, 190, 0)
-    );
+    background-image: linear-gradient(to right,
+        rgba(190, 190, 190, 0),
+        rgba(255, 255, 255, 0.75),
+        rgba(190, 190, 190, 0));
   }
 }
 
-/* Для планшетов */
+/* For tablets */
 @media screen and (min-width: 460px) and (max-width: 1024px) {
   .container {
     margin: 15px;

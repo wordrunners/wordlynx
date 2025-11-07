@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { 
+import {
   ADD_THEME_ROUTE,
   GET_THEME_ROUTE,
   UPDATE_THEME_ROUTE,
@@ -15,7 +15,7 @@ export const fetchTheme = createAsyncThunk(
       const userTheme = await axiosRequestDB.get(`${GET_THEME_ROUTE}${data.id}`)
       return userTheme.data
     } catch (error) {
-      return thunkAPI.rejectWithValue('Ошибка отправки данных')
+      return thunkAPI.rejectWithValue('Error sending data')
     }
   }
 )
@@ -27,7 +27,7 @@ export const changeTheme = createAsyncThunk(
       const response = await axiosRequestDB.post(UPDATE_THEME_ROUTE, data)
       return await response.data
     } catch (error) {
-      return thunkAPI.rejectWithValue('Ошибка отправки данных')
+      return thunkAPI.rejectWithValue('Error sending data')
     }
   }
 )

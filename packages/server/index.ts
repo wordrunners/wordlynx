@@ -10,17 +10,17 @@ import * as fs from 'fs'
 import * as path from 'path'
 import { createClientAndConnect } from './db';
 import { router } from './src/Router'
-import  helmet  from 'helmet'
+import helmet from 'helmet'
 
 
-const port = Number(process.env.SERVER_PORT) || 5000
+const port = Number(process.env.SERVER_PORT) || 3001
 
 async function createServer(isDev = process.env.NODE_ENV === 'development') {
   await createClientAndConnect();
   const app = express()
   app.disable('x-powered-by').enable('trust proxy')
   app.use(cors())
-  
+
   app.use(
     helmet.contentSecurityPolicy({
       useDefaults: true,
@@ -38,9 +38,11 @@ async function createServer(isDev = process.env.NODE_ENV === 'development') {
   });
 
   let vite: ViteDevServer | undefined;
-  const distPath = path.dirname(require.resolve('client/dist/index.html'))
   const srcPath = path.dirname(require.resolve('client'))
-  const ssrClientPath = require.resolve('client/ssr-dist/ssr.cjs')
+
+  // Only resolve dist path if not in dev mode
+  const distPath = !isDev ? path.dirname(require.resolve('client/dist/index.html')) : ''
+  const ssrClientPath = !isDev ? require.resolve('client/ssr-dist/ssr.cjs') : ''
 
   if (isDev) {
     vite = await createViteServer({
@@ -48,7 +50,7 @@ async function createServer(isDev = process.env.NODE_ENV === 'development') {
       root: srcPath,
       appType: 'custom'
     })
-  
+
     app.use(vite.middlewares)
   }
 
@@ -67,7 +69,7 @@ async function createServer(isDev = process.env.NODE_ENV === 'development') {
       let template: string;
       let render;
       let store
-      
+
       if (!isDev) {
         template = fs.readFileSync(
           path.resolve(distPath, 'index.html'),
@@ -84,7 +86,7 @@ async function createServer(isDev = process.env.NODE_ENV === 'development') {
         render = (await vite!.ssrLoadModule(path.resolve(srcPath, 'src/ssr.tsx'))).render;
         store = (await vite!.ssrLoadModule(path.resolve(srcPath, 'src/ssr.tsx'))).store;
       }
-      
+
       const appHtml = await render(url)
 
       const state = store.getState()
@@ -94,7 +96,7 @@ async function createServer(isDev = process.env.NODE_ENV === 'development') {
       )}</script>`
 
       const html = template.replace(`<!--ssr-outlet-->`, appHtml + preloadedState)
-  
+
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
     } catch (e) {
       if (isDev) {
@@ -108,5 +110,5 @@ async function createServer(isDev = process.env.NODE_ENV === 'development') {
 }
 
 createServer().then(({ app }) => app.listen(port, () => {
-    console.log(`  ➜ 🎸 Server is listening on port: ${port}`)
-  }))
+  console.log(`  ➜ 🎸 Server is listening on http://localhost:${port}`)
+}))

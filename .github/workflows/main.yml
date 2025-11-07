@@ -31,7 +31,7 @@ jobs:
           POSTGRES_DB: postgres
           POSTGRES_PORT: 5432
           SERVER_NAME: wordrunners-bumble-20.ya-praktikum.tech
-          SERVER_PORT: 5000
+          SERVER_PORT: 3001
         run: |
           docker compose build
           docker tag practicum-client:latest cr.yandex/$CR_REGISTRY/practicum-client:latest

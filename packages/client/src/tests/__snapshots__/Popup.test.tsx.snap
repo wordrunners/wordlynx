@@ -29,7 +29,7 @@ Object {
             class="button undefined"
             type="button"
           >
-            Понятно
+            It\'s clear
           </button>
         </div>
       </section>
@@ -60,7 +60,7 @@ Object {
           class="button undefined"
           type="button"
         >
-          Понятно
+          It\'s clear
         </button>
       </div>
     </section>

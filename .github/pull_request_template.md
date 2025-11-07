@@ -1,6 +1,6 @@
-### Какую задачу решаем
+### What problem are we solving?
 
 
-### Скриншоты/видяшка (если есть)
+### Screenshots/video (if available)
 
-### TBD (если есть)
+### TBD (if available)

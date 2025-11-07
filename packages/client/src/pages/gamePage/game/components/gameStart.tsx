@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { 
-  CanvasContext, 
-  useAppSelector, 
+import {
+  CanvasContext,
+  useAppSelector,
   useAppDispatch
 } from '@/hooks'
 import {
@@ -10,7 +10,7 @@ import {
   selectWidth,
   setWidth,
   setHeight,
-  setTotalPlayers, 
+  setTotalPlayers,
   setStatus,
   nextTotalPlayers,
   setSettings,
@@ -35,7 +35,7 @@ export const GameStart = () => {
   let settingsLines: Settings = 'default'
 
   useEffect(() => {
-    const context = canvasRef.current?.getContext('2d',{willReadFrequently:true})
+    const context = canvasRef.current?.getContext('2d', { willReadFrequently: true })
     if (context) {
       setContext(context)
       dispatch(setStatus('start'))
@@ -62,24 +62,24 @@ export const GameStart = () => {
         dispatch(setActiveSettings('local'))
         break
       case 'ArrowRight':
-        if ((settingsLines === 'players') || (settingsLines === 'ready'))  {
+        if ((settingsLines === 'players') || (settingsLines === 'ready')) {
           settingsLines = 'ready'
           dispatch(nextTotalPlayers())
         }
         break
       case 'Enter':
-      case ' ' :
-        if ((settingsLines === 'players') || (settingsLines === 'ready'))  {
+      case ' ':
+        if ((settingsLines === 'players') || (settingsLines === 'ready')) {
           window.removeEventListener('keydown', setPlayers)
           navigate('/game-play')
           dispatch(setStatus('loading'))
           dispatch(setSettings('local'))
           settingsLines = 'default'
           dispatch(setActiveSettings('default'))
-        } else if ((settingsLines === 'local'))  {
+        } else if ((settingsLines === 'local')) {
           dispatch(setSettings(settingsLines))
           settingsLines = 'players'
-        } else if ((settingsLines === 'online'))  {
+        } else if ((settingsLines === 'online')) {
           window.removeEventListener('keydown', setPlayers)
           navigate('/game-play')
           dispatch(setStatus('loading'))
@@ -89,7 +89,7 @@ export const GameStart = () => {
         }
         break
       default:
-        console.log(`Кнопкой ${event.key} игру не запустить`)
+        console.log(`The ${event.key} button does not launch the game.`)
     }
   }
 
@@ -101,9 +101,9 @@ export const GameStart = () => {
   return (
     <CanvasContext.Provider value={{ context: context }}>
       <canvas
-        ref={ canvasRef }
-        width={ width }
-        height={ height }
+        ref={canvasRef}
+        width={width}
+        height={height}
       ></canvas>
       <Game />
     </CanvasContext.Provider>

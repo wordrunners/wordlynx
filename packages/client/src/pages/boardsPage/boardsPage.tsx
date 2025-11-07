@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import { Formik, Field, Form } from 'formik';
 import { useAuth, useAppDispatch, useAppSelector } from "@/hooks";
 import { BOARDS_ROUTE } from '@/data/routes'
-import { 
-  selectBoardsData, 
-  getBoards, 
+import {
+  selectBoardsData,
+  getBoards,
   addBoard
 } from '@/store/boards'
 import { DiscussIcon } from "../forumPage/forumPage";
@@ -27,10 +27,10 @@ export const BoardsPage: FC = () => {
 
   const onSubmitAddBoard = (value: { title: string, description: string, }) => {
     dispatch(addBoard(value))
-      .then(() => { 
-        return dispatch(getBoards()) 
+      .then(() => {
+        return dispatch(getBoards())
       })
-    }
+  }
 
   if (user) {
 
@@ -43,29 +43,29 @@ export const BoardsPage: FC = () => {
 
     return (
       <section className="forum">
-        <LinkButton to='/' modifier='header-btn'>Назад</LinkButton>
+        <LinkButton to='/' modifier='header-btn'>Back</LinkButton>
         <div className="forum__wrapper">
-          <h2 className='forum__title'>ФОРУМ</h2>
+          <h2 className='forum__title'>FORUM</h2>
           <div className="forum__topics">
             {status !== 'FETCH_FULFILLED' ? (
-                <Loader />
-              ) : (
-                <>
-                  {boards?.map(({ title, description, id, createdAt }) => {
-                    const formattedDate: string = format(new Date(createdAt), "dd-MM-yyyy, HH:mm");
-                    return <Link to={`${BOARDS_ROUTE}/${id}`} key={`link-${id}`} className='forum__link'>
-                      <SubforumRow
-                        icon={<DiscussIcon />}
-                        title={title}
-                        description={description}
-                        numberOfComments="24"
-                        date={formattedDate}
-                      />
-                    </Link>
-                  })}
-                </>
+              <Loader />
+            ) : (
+              <>
+                {boards?.map(({ title, description, id, createdAt }) => {
+                  const formattedDate: string = format(new Date(createdAt), "dd-MM-yyyy, HH:mm");
+                  return <Link to={`${BOARDS_ROUTE}/${id}`} key={`link-${id}`} className='forum__link'>
+                    <SubforumRow
+                      icon={<DiscussIcon />}
+                      title={title}
+                      description={description}
+                      numberOfComments="24"
+                      date={formattedDate}
+                    />
+                  </Link>
+                })}
+              </>
             )}
-          </div> 
+          </div>
           <Formik
             initialValues={initial}
             onSubmit={onSubmitAddBoard}
@@ -77,7 +77,7 @@ export const BoardsPage: FC = () => {
                   name="title"
                   title="newTitle"
                   type='text'
-                  placeholder="Введите название"
+                  placeholder="Enter the name"
                   key="newTitle"
                   className="forum__field"
                 />
@@ -86,16 +86,16 @@ export const BoardsPage: FC = () => {
                   name="description"
                   title="newDescription"
                   type='text'
-                  placeholder="Введите описание темы"
+                  placeholder="Enter the description"
                   key="newDescription"
                   className="forum__field forum__field_desc"
-                />      
-                <Button type="submit" className="forum__button">Создать тему</Button>
+                />
+                <Button type="submit" className="forum__button">Create topic</Button>
               </Form>
             )}
           </Formik>
         </div>
-        
+
       </section>
     )
   } else {

@@ -1,30 +1,30 @@
-## Используя Devtools:
+## Using Devtools:
 
-### Вкладка Memory 
+### Memory tab
 
-В пункте Select JavaScript VM instance
+In the Select JavaScript VM instance section
 
-Показатель Total JS heap size на страницах:
+Total JS heap size on pages:
 ```
-Start, Forum, LeaderBoard около 11МБ
-Game около 13МБ
-```
-
-При использовании приложения и цикличном повторении переходов по страницам, показатели стабилизируются у начальных значений.
-
-Созданы моментальные снимки после загрузки страницы, и после использования. Состояние снимков приблизительно одинаковое. 
-
-### Вкладка Recorder 
-
-Сделаны записи с чекбоксом Memory.
-
-```
-Старт записи: запуск приложения
-Окончание записи: после перехода всех страниц
+Start, Forum, LeaderBoard: about 11MB
+Game: about 13MB
 ```
 
-График с данными о используемой памяти не показывает периодических скачков в памяти или роста.
+When using the application and cycling through pages, the values ​​stabilize at the initial values.
 
-### Вывод:
+Snapshots were created after the page load and after use. The snapshots are approximately the same size.
 
-Утечек в памяти не обнаружено
+### Recorder tab
+
+Recordings were made with the Memory checkbox.
+
+``
+Recording start: application launch
+Recording end: after all pages have been navigated
+```
+
+The graph with memory usage data shows no periodic spikes or increases in memory.
+
+### Conclusion:
+
+No memory leaks detected

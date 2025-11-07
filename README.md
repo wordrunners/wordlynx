@@ -1,59 +1,63 @@
-## Bumble
+## Wordlynx
 
-Это игра в слова!
+It's a word game!
 
-Нужно собрать слово из букв за минуту. 
-Чем длиннее - тем лучше.
- 
-За каждую букву начисляются победные баллы.
-
-## Deploy 
-https://wordrunners-bumble-20.ya-praktikum.tech/
+You need to create a word from letters in one minute.
+The longer the word, the better.
+You earn points for each letter.
 
 ## Stack:
 
 TypeScript, Canvas API, React, Redux, nginx, Git, GitHub Actions, Docker, Vite, HTML5, SASS, Express, Node.JS, Postgresql, Sequelize, jest
 
-## Основные функции:
-- Игра в слова Bumble
-- Авторизация / регистрация (по логин/пароль и oAuth)
-- Редактирование данных профиля
-- Создание тем форума
-- Создание сообщений, ответов и добавление реакций в форуме
-- Сохранение результата в Лидерборде
-- Переключение темы оформления 
+## Main functions:
 
-## Основные команды
+- Word game
+- Authorization/registration (using login/password and oAuth)
+- Editing profile data
+- Creating forum topics
+- Creating messages, replies, and adding reactions in the forum
+- Saving results to the Leaderboard
+- Switching themes
 
-###  Как собрать и запустить Сервер и БД в Docker?
-```yarn docker:build```
+## Basic commands
 
-###  Как начать разрабатывать в hot-reload режиме с БД в Docker?
-По умолчанию запуститься на localhost:5000. После сборки Docker сервисов. В отдельных терминалах:
+Before the first run:
+```node init.js```
 
+### How do I start developing in hot-reload mode with a DB in Docker?
+
+By default, the server starts on localhost:3001. In separate terminals:
 ```yarn docker:db```
 ```yarn dev```
 
-###  Как собрать Клиент с nginx и Сервер в prod?
+### How do I build and run the Server and DB in Docker?
+
+```yarn docker:build```
+
+### How to build a Client with nginx and a Server in production?
+
 ```yarn docker:prod```
 
-### Тесты
-Для клиента используется [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro/)
+### Tests
+
+Used for the client [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro/)
 ```yarn test```
 
-### Линтинг
+### Linting
+
 ```yarn lint```
 
-### Форматирование prettier
+### Prettier formatting
+
 ```yarn format```
 
-### Production окружение в докере
-Перед первым запуском выполните `node init.js`
+### Production environment in Docker
 
-`docker compose up` - запустит три сервиса
-1. nginx, раздающий клиентскую статику (client)
-2. node, ваш сервер (server)
-3. postgres, вашу базу данных (postgres)
+`docker compose up` - start three services
+1. nginx, which serves client statics (client)
+2. node, your server (server)
+3. postgres, your data stores (postgres)
 
-Если вам понадобится только один сервис, просто уточните какой в команде
-`docker compose up {sevice_name}`, например `docker compose up server`
+If you only need one service, just specify which one:
+`docker Compose Up {sevice_name}`, for example `Docker Compose Up Server`

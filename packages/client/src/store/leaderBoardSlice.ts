@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { RootState, AppThunk } from '@/store/store';
-import { 
+import {
   Leaders,
-  Leader, 
+  Leader,
   LeaderBoard,
   LeaderPayload
 } from '@/types';
@@ -20,33 +20,33 @@ const initialState: LeaderBoard = {
 export const fetchLeaderboard = createAsyncThunk(
   'leaderBoard/fetchLeaderboard',
   async (_, { rejectWithValue }) => {
-  try {
-    const response = await leaderboardAPI.getLeaderboard({
-      ratingFieldName,
-      cursor: 0,
-      limit: 100,
-    });
-    
-    return response;
-  } catch (error) {
-    return rejectWithValue('Ошибка загрузки данных')
-  }
+    try {
+      const response = await leaderboardAPI.getLeaderboard({
+        ratingFieldName,
+        cursor: 0,
+        limit: 100,
+      });
+
+      return response;
+    } catch (error) {
+      return rejectWithValue('Error fetching data')
+    }
   }
 );
 
 export const addUserToLeaderboard = createAsyncThunk(
   'leaderBoard/addUserToLeaderboard',
- async (data: LeaderPayload, { rejectWithValue }) => {
-  try {
-    await leaderboardAPI.addUserToLeaderboard({
-      data,
-      ratingFieldName,
-      teamName,
-    });
-  } catch (error) {
-    return rejectWithValue('Ошибка отправки данных')
+  async (data: LeaderPayload, { rejectWithValue }) => {
+    try {
+      await leaderboardAPI.addUserToLeaderboard({
+        data,
+        ratingFieldName,
+        teamName,
+      });
+    } catch (error) {
+      return rejectWithValue('Error sending data')
+    }
   }
- }
 );
 const setError = (state: any, action: PayloadAction) => {
   state.loading = false;

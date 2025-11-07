@@ -13,13 +13,13 @@ interface State {
 
 export class ErrorBoundary extends Component<Props, State> {
     constructor(props: Props) {
-      super(props);
+        super(props);
 
-      this.state = {
-        error: undefined,
-        errorInfo: undefined,
-        hasError: false,
-    };
+        this.state = {
+            error: undefined,
+            errorInfo: undefined,
+            hasError: false,
+        };
     }
     static getDerivedStateFromError(error: Error) {
         return ({ hasError: true })
@@ -47,7 +47,7 @@ export class ErrorBoundary extends Component<Props, State> {
             return (
                 <Popup
                     isOpen={hasError}
-                    title='Что-то пошло не так'
+                    title='Something went wrong'
                     onClose={this.handleClose}
                 >
                     <details>
@@ -59,5 +59,5 @@ export class ErrorBoundary extends Component<Props, State> {
             );
         }
         return this.props.children;
-    };  
+    };
 };

@@ -14,8 +14,8 @@ interface Props {
 }
 
 export const Popup: FC<Props> = ({
-    title, children, onSubmit, onClose, buttonName = 'Понятно', isOpen,
-  }): JSX.Element => {
+    title, children, onSubmit, onClose, buttonName = 'It\'s clear', isOpen,
+}): JSX.Element => {
 
     const handleSubmit = (): void => {
         onSubmit && onSubmit();
@@ -33,7 +33,7 @@ export const Popup: FC<Props> = ({
         <section className={cn('popup', { 'popup_opened': isOpen })} onClick={handleOverlayClose}>
             <div className="popup__container">
                 <div onClick={onClose} className='popup__close'>
-                    <img src={CloseIcon} className='popup__close-icon' alt='close'/>
+                    <img src={CloseIcon} className='popup__close-icon' alt='close' />
                 </div>
                 <h2 className="popup__title">{title}</h2>
                 {children}

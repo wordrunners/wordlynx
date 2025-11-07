@@ -2,7 +2,7 @@ import { createSlice, PayloadAction, createAsyncThunk, createSelector } from '@r
 import type { UserDTO } from '@/api/types';
 import { RootState } from '@/store/store';
 import { authAPI } from '@/api/authApi';
-import { SigninRequestData,  SignupRequestData, OAuthRequestData } from '@/api/authApi';
+import { SigninRequestData, SignupRequestData, OAuthRequestData } from '@/api/authApi';
 import type { AuthState } from '@/types';
 
 const initialState: AuthState = {
@@ -82,11 +82,11 @@ export const fetchUser = createAsyncThunk('auth/fetchUser',
       const response = await authAPI.getUser();
       if (response.id) {
         return response
-      }  else {
-        return thunkApi.rejectWithValue('Ошибка авторизации');
-      } 
+      } else {
+        return thunkApi.rejectWithValue('Authorization error');
+      }
     } catch (error) {
-      return thunkApi.rejectWithValue('Ошибка авторизации');
+      return thunkApi.rejectWithValue('Authorization error');
     }
   }
 );
@@ -94,12 +94,12 @@ export const fetchUser = createAsyncThunk('auth/fetchUser',
 export const signin = createAsyncThunk('auth/signin',
   async (data: SigninRequestData, thunkApi) => {
     try {
-      const response  = await authAPI.signin(data);
+      const response = await authAPI.signin(data);
 
       thunkApi.dispatch(fetchUser());
       return response;
     } catch (error) {
-      return thunkApi.rejectWithValue('Ошибка авторизации');
+      return thunkApi.rejectWithValue('Authorization error');
     }
   }
 );
@@ -107,12 +107,12 @@ export const signin = createAsyncThunk('auth/signin',
 export const signup = createAsyncThunk('auth/signup',
   async (data: SignupRequestData, thunkApi) => {
     try {
-      const response  = await authAPI.signup(data);
+      const response = await authAPI.signup(data);
       thunkApi.dispatch(fetchUser());
 
       return response;
     } catch (error) {
-      return thunkApi.rejectWithValue('Ошибка регистрации');
+      return thunkApi.rejectWithValue('Registration error');
     }
   }
 );
@@ -120,11 +120,11 @@ export const signup = createAsyncThunk('auth/signup',
 export const logout = createAsyncThunk('auth/logout',
   async (_, thunkApi) => {
     try {
-      const response  = await authAPI.logout();
+      const response = await authAPI.logout();
 
       return response;
     } catch (error) {
-      return thunkApi.rejectWithValue('Ошибка выхода');
+      return thunkApi.rejectWithValue('Login error');
     }
   }
 );
@@ -132,11 +132,11 @@ export const logout = createAsyncThunk('auth/logout',
 export const fetchOAuth = createAsyncThunk('auth/fetchOAuth',
   async (_, thunkApi) => {
     try {
-      const response  = await authAPI.fetchOAuth();
+      const response = await authAPI.fetchOAuth();
       window.location.href = `https://oauth.yandex.ru/authorize?response_type=code&client_id=${response.service_id}&redirect_uri=${window.location.origin}`;
-    } 
-      catch (error) {
-      return thunkApi.rejectWithValue('Ошибка входа');
+    }
+    catch (error) {
+      return thunkApi.rejectWithValue('Login error');
     }
   }
 );
@@ -144,10 +144,10 @@ export const fetchOAuth = createAsyncThunk('auth/fetchOAuth',
 export const signinOAuth = createAsyncThunk('auth/signinOAuth',
   async (data: OAuthRequestData, thunkApi) => {
     try {
-      const response  = await authAPI.oAuth(data);
+      const response = await authAPI.oAuth(data);
       return response;
     } catch (error) {
-      return thunkApi.rejectWithValue('Ошибка авторизации');
+      return thunkApi.rejectWithValue('Authorization error');
     }
   }
 );

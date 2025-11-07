@@ -11,13 +11,13 @@ const authState: AuthState = {
 
 const userState: ProfileState = {
   profile: {
-    avatar:  '',
-    email: 'test@test.ru',
-    login: 'Semen',
-    firstName: 'Иван',
-    secondName: 'Семенов',
-    displayName: 'Семен',
-    phone: '+77777777777',
+    avatar: '',
+    email: 'test@test.test',
+    login: 'Hinton',
+    firstName: 'Geoffrey',
+    secondName: 'Hinton',
+    displayName: 'Hinton',
+    phone: '+1111111111',
   },
   status: null,
   error: null,

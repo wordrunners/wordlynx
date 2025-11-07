@@ -8,19 +8,19 @@ interface Props {
 export const GameRules = ({ open, onClose }: Props): JSX.Element => {
     return (
         <Popup
-            title='ПРАВИЛА'
+            title='RULES'
             isOpen={open}
             onClose={onClose}
         >
             <div className='rules'>
                 <p className='rules__text'>
-                    Bumble – это очень простая и быстрая игра в слова.
+                    Wordlynx is a very simple and fast word game.
                 </p>
                 <p className='rules__text'>
-                    Собери слово из букв за минуту. Чем длиннее - тем лучше. Ведь за каждую букву начисляются победные баллы.
+                    Collect a word from the letters in one minute. The longer the word, the better. After all, you earn victory points for each letter.
                 </p>
                 <p className='rules__text'>
-                    Каждая буква может использоваться в слове ровно столько раз, сколько раз она присутствует на карточке.
+                    Each letter can be used in the word exactly as many times as it appears on the card.
                 </p>
             </div>
         </Popup>

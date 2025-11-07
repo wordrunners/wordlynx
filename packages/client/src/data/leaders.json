@@ -2,21 +2,21 @@
   {
     "id": 1,
     "place": 1,
-    "name": "Друзь",
+    "name": "Hinton",
     "avatar": "",
     "score": 5
   },
   {
     "id": 2,
     "place": 2,
-    "name": "Вассерман",
+    "name": "Peebles",
     "avatar": "",
     "score": 3
   },
   {
     "id": 3,
     "place": 3,
-    "name": "Поташев",
+    "name": "McDonald",
     "avatar": "",
     "score": 1
   }

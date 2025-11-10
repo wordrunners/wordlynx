@@ -1,5 +1,7 @@
 {
-  "name": "client-server-template-with-vite",
+  "name": "wordlynx",
+  "version": "1.0.1",
+  "description": "client-server-template-with-vite",
   "private": true,
   "scripts": {
     "bootstrap": "yarn install && node init.js",

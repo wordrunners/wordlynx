@@ -22,7 +22,7 @@ Object {
           <h2
             class="popup__title"
           >
-            ПРАВИЛА
+            RULES
           </h2>
           <div
             class="rules"
@@ -30,24 +30,24 @@ Object {
             <p
               class="rules__text"
             >
-              Bumble – это очень простая и быстрая игра в слова.
+              Wordlynx is a very simple and fast word game.
             </p>
             <p
               class="rules__text"
             >
-              Собери слово из букв за минуту. Чем длиннее - тем лучше. Ведь за каждую букву начисляются победные баллы.
+              Collect a word from the letters in one minute. The longer the word, the better. After all, you earn victory points for each letter.
             </p>
             <p
               class="rules__text"
             >
-              Каждая буква может использоваться в слове ровно столько раз, сколько раз она присутствует на карточке.
+              Each letter can be used in the word exactly as many times as it appears on the card.
             </p>
           </div>
           <button
             class="button undefined"
             type="button"
           >
-            Понятно
+            It\'s clear
           </button>
         </div>
       </section>
@@ -71,7 +71,7 @@ Object {
         <h2
           class="popup__title"
         >
-          ПРАВИЛА
+          RULES
         </h2>
         <div
           class="rules"
@@ -79,24 +79,24 @@ Object {
           <p
             class="rules__text"
           >
-            Bumble – это очень простая и быстрая игра в слова.
+            Wordlynx is a very simple and fast word game.
           </p>
           <p
             class="rules__text"
           >
-            Собери слово из букв за минуту. Чем длиннее - тем лучше. Ведь за каждую букву начисляются победные баллы.
+            Collect a word from the letters in one minute. The longer the word, the better. After all, you earn victory points for each letter.
           </p>
           <p
             class="rules__text"
           >
-            Каждая буква может использоваться в слове ровно столько раз, сколько раз она присутствует на карточке.
+            Each letter can be used in the word exactly as many times as it appears on the card.
           </p>
         </div>
         <button
           class="button undefined"
           type="button"
         >
-          Понятно
+          It\'s clear
         </button>
       </div>
     </section>

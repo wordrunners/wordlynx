@@ -1,12 +1,12 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { axiosRequestDB } from '@/Core'
-import { 
+import {
   ADD_BOARD_ROUTE,
   GET_BOARDS_ROUTE,
   ADD_COMMENT_ROUTE,
   GET_COMMENTS_ROUTE,
   ADD_LIKE_ROUTE,
-  GET_LIKES_ROUTE,  
+  GET_LIKES_ROUTE,
 } from './routes'
 import {
   AddLike,
@@ -21,7 +21,7 @@ export const addBoard = createAsyncThunk(
       const response = await axiosRequestDB.post(ADD_BOARD_ROUTE, data)
       return response.data
     } catch (error) {
-      return thunkAPI.rejectWithValue('Ошибка в отправке данных')
+      return thunkAPI.rejectWithValue('Error sending data')
     }
   }
 )
@@ -33,7 +33,7 @@ export const getBoards = createAsyncThunk(
       const response = await axiosRequestDB.get(GET_BOARDS_ROUTE)
       return response.data
     } catch (error) {
-      return thunkAPI.rejectWithValue('Ошибка в получении данных')
+      return thunkAPI.rejectWithValue('Error fetching data')
     }
   }
 )
@@ -45,7 +45,7 @@ export const addComment = createAsyncThunk(
       const response = await axiosRequestDB.post(ADD_COMMENT_ROUTE, data)
       return response.data
     } catch (error) {
-      return thunkAPI.rejectWithValue('Ошибка в отправке данных')
+      return thunkAPI.rejectWithValue('Error sending data')
     }
   }
 )
@@ -56,7 +56,7 @@ export const getComments = createAsyncThunk(
       const response = await axiosRequestDB.post(GET_COMMENTS_ROUTE, data)
       return response.data
     } catch (error) {
-      return thunkAPI.rejectWithValue('Ошибка в отправке данных')
+      return thunkAPI.rejectWithValue('Error sending data')
     }
   }
 )
@@ -68,7 +68,7 @@ export const addLike = createAsyncThunk(
       const response = await axiosRequestDB.post(ADD_LIKE_ROUTE, data)
       return response.data
     } catch (error) {
-      return thunkAPI.rejectWithValue('Ошибка в отправке данных')
+      return thunkAPI.rejectWithValue('Error sending data')
     }
   }
 )
@@ -80,7 +80,7 @@ export const getLikes = createAsyncThunk(
       const response = await axiosRequestDB.post(GET_LIKES_ROUTE, data)
       return response.data
     } catch (error) {
-      return thunkAPI.rejectWithValue('Ошибка в отправке данных')
+      return thunkAPI.rejectWithValue('Error sending data')
     }
   }
 )

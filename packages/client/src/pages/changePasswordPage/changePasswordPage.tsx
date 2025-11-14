@@ -6,7 +6,7 @@ import { LinkButton } from '@/components/LinkButton'
 import avatar from '@/assets/images/avatar.png'
 import './changePasswordPage.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import {selectUser, changePass}  from '@/store/userSlice'
+import { selectUser, changePass } from '@/store/userSlice'
 import { AppDispatch } from '@/store/store'
 import { API } from "@/data/api"
 
@@ -27,10 +27,10 @@ export const ChangePasswordPage: FC<User> = () => {
   const [responseColor, setResponseColor] = useState('')
 
   const [oldPasswordError, setOldPasswordError] = useState(
-    'поле password не может быть пустым'
+    'The password field cannot be empty.'
   )
   const [newPasswordError, setNewPasswordError] = useState(
-    'поле password не может быть пустым'
+    'The password field cannot be empty.'
   )
   const [formValid, setformValid] = useState(false)
 
@@ -48,10 +48,10 @@ export const ChangePasswordPage: FC<User> = () => {
     const PASSWORD = /^((?=.*\d)(?=.*[A-Z])[a-zA-Z0-9]{8,16})$/
     if (!PASSWORD.test(String(e.target.value))) {
       setOldPasswordError(
-        'Пароль должен быть написан латиницей от 8 до 15 знаков, обязательно одна цифра и одна заглавная буква'
+        'The password must be written in Latin characters from 8 to 15 characters, one number and one capital letter are required.'
       )
       if (!e.target.value) {
-        setOldPasswordError('поле password не может быть пустым')
+        setOldPasswordError('The old password field cannot be empty')
       }
     } else {
       setOldPasswordError('')
@@ -63,10 +63,10 @@ export const ChangePasswordPage: FC<User> = () => {
     const PASSWORD = /^((?=.*\d)(?=.*[A-Z])[a-zA-Z0-9]{8,16})$/
     if (!PASSWORD.test(String(e.target.value))) {
       setNewPasswordError(
-        'Пароль должен быть написан латиницей от 8 до 15 знаков, обязательно одна цифра и одна заглавная буква'
+        'The password must be written in Latin characters from 8 to 15 characters, one number and one capital letter are required.'
       )
       if (!e.target.value) {
-        setNewPasswordError('поле password не может быть пустым')
+        setNewPasswordError('The new password field cannot be empty')
       }
     } else {
       setNewPasswordError('')
@@ -93,11 +93,11 @@ export const ChangePasswordPage: FC<User> = () => {
       oldPassword: oldPassword,
       newPassword: newPassword,
     })
-    if (responseText === 'пароль изменен') {
-      setResponse('пароль изменен')
+    if (responseText === 'password changed') {
+      setResponse('Password changed')
       setResponseColor('green')
     } else {
-      setResponse('ошибка')
+      setResponse('Error')
       setResponseColor('red')
     }
   }
@@ -105,11 +105,11 @@ export const ChangePasswordPage: FC<User> = () => {
   return (
     <div className="wrap">
       <div className="avatar">
-        <img src={avatarUser} alt={`аватар пользователя ${user.displayName}`} />
+        <img src={avatarUser} alt={`User avatar ${user.displayName}`} />
       </div>
       <div className="card">
         <form className="card__form">
-          <h1>Изменение пароля</h1>
+          <h1>Change password</h1>
           <div className="input">
             <input
               value={oldPassword}
@@ -117,10 +117,10 @@ export const ChangePasswordPage: FC<User> = () => {
               onBlur={e => blurHandler(e)}
               name="oldPassword"
               type="password"
-              placeholder="введите старый пароль"
+              placeholder="Enter old password"
               className="input__field"
             />
-            <label className="input__label">Старый пароль</label>
+            <label className="input__label">Old Password</label>
             {oldPasswordDirty && oldPasswordError && (
               <div style={{ color: 'red' }}>{oldPasswordError}</div>
             )}
@@ -132,10 +132,10 @@ export const ChangePasswordPage: FC<User> = () => {
               onBlur={e => blurHandler(e)}
               name="newPassword"
               type="password"
-              placeholder="введите новый пароль"
+              placeholder="Enter new password"
               className="input__field"
             />
-            <label className="input__label">Новый пароль</label>
+            <label className="input__label">New Password</label>
             {newPasswordDirty && newPasswordError && (
               <div style={{ color: 'red' }}>{newPasswordError}</div>
             )}
@@ -149,9 +149,9 @@ export const ChangePasswordPage: FC<User> = () => {
               type="submit"
               className="action__button"
               onClick={passwordUp}
-              children="Заменить"
+              children="Change"
             />
-            <LinkButton to="/profile" children="Назад" modifier="back" />
+            <LinkButton to="/profile" children="Back" modifier="back" />
           </div>
         </form>
       </div>

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import type { User  } from '@/types/user'
+import type { User } from '@/types/user'
 import { Avatar } from '@/components/Avatar'
 import { Button } from '@/components/Button'
 import { LinkButton } from '@/components/LinkButton'
@@ -19,17 +19,17 @@ export const ProfileData: FC = () => {
 
   const dispatch = useDispatch<AppDispatch>();
 
-  const email = useInput(user.email, {isEmail: true});
-  const login = useInput(user.login, {isLogin: true});
-  const firstName = useInput(user.firstName, {isName: true});
-  const secondName = useInput(user.secondName, {isName: true});
-  const displayName = useInput(user.displayName, {isName: true});
-  const phone = useInput(user.phone, {isPhone: true});
+  const email = useInput(user.email, { isEmail: true });
+  const login = useInput(user.login, { isLogin: true });
+  const firstName = useInput(user.firstName, { isName: true });
+  const secondName = useInput(user.secondName, { isName: true });
+  const displayName = useInput(user.displayName, { isName: true });
+  const phone = useInput(user.phone, { isPhone: true });
 
-  const handleSubmitForm = (e:any) => {
-    
+  const handleSubmitForm = (e: any) => {
+
     e.preventDefault();
-    
+
     const changeProfileData: User = {
       email: e.target[0].value,
       login: e.target[1].value,
@@ -40,7 +40,7 @@ export const ProfileData: FC = () => {
 
     }
     dispatch(profileLoading);
-    
+
     dispatch(changeProfile(changeProfileData));
   }
 
@@ -49,32 +49,32 @@ export const ProfileData: FC = () => {
       <Avatar displayName={user.displayName} avatar={user.avatar} />
       <form className='change__form' onSubmit={handleSubmitForm}>
         <div className="change__form-list">
-          {(email.isDirty && email.emailError) && <div className='error'>Некорректный email</div>}
-          <ChangeData onChange={(e:React.ChangeEvent<HTMLInputElement>) => email.onChange(e)} onBlur={() => email.onBlur()} value={email.value} title='Почта' type='text'  name={'email'} placeholder={user.email}/>
+          {(email.isDirty && email.emailError) && <div className='error'>Incorrect email</div>}
+          <ChangeData onChange={(e: React.ChangeEvent<HTMLInputElement>) => email.onChange(e)} onBlur={() => email.onBlur()} value={email.value} title='Email' type='text' name={'email'} placeholder={user.email} />
 
-          {(login.isDirty && login.loginError) && <div className='error'>Логин должен быть написан латиницей от 3 до 20 знаков, может содержать цифры, дефис и подчеркивание</div>}
-          <ChangeData onChange={(e:React.ChangeEvent<HTMLInputElement>) => login.onChange(e)} onBlur={() => login.onBlur()} value={login.value} title='Логин' type='text' name={'login'} placeholder={user.login}/>
+          {(login.isDirty && login.loginError) && <div className='error'>Login must be written in Latin characters from 3 to 20 characters, may contain numbers, hyphens and underscores</div>}
+          <ChangeData onChange={(e: React.ChangeEvent<HTMLInputElement>) => login.onChange(e)} onBlur={() => login.onBlur()} value={login.value} title='Login' type='text' name={'login'} placeholder={user.login} />
 
-          {(firstName.isDirty && firstName.nameError) && <div className='error'>Имя должно быть с заглавной буквы, более 1 буквы</div>}
-          <ChangeData onChange={(e:React.ChangeEvent<HTMLInputElement>) => firstName.onChange(e)} onBlur={() => firstName.onBlur()} value={firstName.value} title='Имя' type='text' name={'firstName'} placeholder={user.firstName}/>
+          {(firstName.isDirty && firstName.nameError) && <div className='error'>First name must start with a capital letter and be more than 1 letter</div>}
+          <ChangeData onChange={(e: React.ChangeEvent<HTMLInputElement>) => firstName.onChange(e)} onBlur={() => firstName.onBlur()} value={firstName.value} title='First Name' type='text' name={'firstName'} placeholder={user.firstName} />
 
-          {(secondName.isDirty && secondName.nameError) && <div className='error'>Фамилия должна быть с заглавной буквы, более 1 буквы</div>}
-          <ChangeData onChange={(e:React.ChangeEvent<HTMLInputElement>) => secondName.onChange(e)} onBlur={() => secondName.onBlur()} value={secondName.value} title='Фамилия' type='text' name={'secondName'} placeholder={user.secondName}/>
+          {(secondName.isDirty && secondName.nameError) && <div className='error'>Last name must start with a capital letter and be more than 1 letter</div>}
+          <ChangeData onChange={(e: React.ChangeEvent<HTMLInputElement>) => secondName.onChange(e)} onBlur={() => secondName.onBlur()} value={secondName.value} title='Last Name' type='text' name={'secondName'} placeholder={user.secondName} />
 
-          {(displayName.isDirty && displayName.nameError) && <div className='error'>Имя в игре должно быть с заглавной буквы, более 1 буквы</div>}
-          <ChangeData onChange={(e:React.ChangeEvent<HTMLInputElement>) => displayName.onChange(e)} onBlur={() => displayName.onBlur()} value={displayName.value} title='Имя в игре' type='text' name={'displayName'} placeholder={user.displayName}/>
+          {(displayName.isDirty && displayName.nameError) && <div className='error'>Display name must start with a capital letter and be more than 1 letter</div>}
+          <ChangeData onChange={(e: React.ChangeEvent<HTMLInputElement>) => displayName.onChange(e)} onBlur={() => displayName.onBlur()} value={displayName.value} title='Display Name' type='text' name={'displayName'} placeholder={user.displayName} />
 
-          {(phone.isDirty && phone.nameError) && <div className='error'>Введите корректный номер телефона, номер может начинаться с 8 или с +</div>}
-          <ChangeData onChange={(e:React.ChangeEvent<HTMLInputElement>) => phone.onChange(e)} onBlur={() => phone.onBlur()} value={phone.value} title='Телефон' type='text' name={'phone'} placeholder={user.phone}/>
+          {(phone.isDirty && phone.nameError) && <div className='error'>Phone number must be valid and start with 8 or +</div>}
+          <ChangeData onChange={(e: React.ChangeEvent<HTMLInputElement>) => phone.onChange(e)} onBlur={() => phone.onBlur()} value={phone.value} title='Phone' type='text' name={'phone'} placeholder={user.phone} />
         </div>
-        
+
         <Button
           type="submit"
           className="action__button"
-          children="Заменить"
+          children="Replace"
         />
-        <LinkButton to="/change-password" children="Изменить пароль" modifier="back" />
-        <LinkButton to="/" children="Назад" modifier="back" />
+        <LinkButton to="/change-password" children="Change password" modifier="back" />
+        <LinkButton to="/" children="Back" modifier="back" />
       </form>
     </div>
   )

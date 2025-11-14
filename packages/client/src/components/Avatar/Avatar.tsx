@@ -5,7 +5,7 @@ import avatar from '@/assets/images/avatar.png'
 import clip from '@/assets/images/clip.svg'
 import send from '@/assets/images/send.svg'
 import { hasError } from '@/utils/apiHasError'
-import {transformUserDTOtoUser} from '@/utils'
+import { transformUserDTOtoUser } from '@/utils'
 import { API } from "@/data/api"
 
 export type User = {
@@ -30,9 +30,9 @@ export const Avatar: FC<User> = props => {
 
   const handleFile = (file: File) => {
     const { type } = file
-    if(type === 'image/png' || type === 'image/jpg' || type === 'image/jpeg') {
+    if (type === 'image/png' || type === 'image/jpg' || type === 'image/jpeg') {
       setFileSelected(file);
-    } 
+    }
   }
 
   const handleImageChange = function (e: React.ChangeEvent<HTMLInputElement>) {
@@ -53,9 +53,9 @@ export const Avatar: FC<User> = props => {
     e.preventDefault();
     e.stopPropagation();
     const tempFile = e.dataTransfer.files[0];
-        if (tempFile) {
-          handleFile(tempFile);
-        }
+    if (tempFile) {
+      handleFile(tempFile);
+    }
   }
 
   const onAvatarUp = async (e: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
@@ -64,11 +64,11 @@ export const Avatar: FC<User> = props => {
     if (fileSelected) {
       const formData = new FormData()
       formData.append('avatar', fileSelected)
-      
+
       const response = await avatarAPI.avatarUp(formData)
       console.log('response=', response);
-      
-      
+
+
       if (!hasError(response)) {
         localStorage.setItem('user', JSON.stringify(transformUserDTOtoUser(response)))
       }
@@ -79,28 +79,28 @@ export const Avatar: FC<User> = props => {
   return (
     <div className="wrap">
       <div className="avatar">
-        <img src={avatarUser} alt={`аватар пользователя ${displayName}`} />
+        <img src={avatarUser} alt={`user avatar ${displayName}`} />
       </div>
       <div className="change__avatar">
-        <p>Выберете вашу фотографию</p>
+        <p>Select your photo</p>
         <form className="change__avatar-file" name="avatar">
           <label className="label">
             <img src={clip} alt="adding a file" />
             <input type="file" name="avatar" onChange={handleImageChange} accept="image/*" hidden />
           </label>
-          
+
           <div
-                className={"dragZone " + (fileSelected ? 'active' : '')}
-                onDragOver={handleOndragOver}
-                onDrop={handleOndrop}
-            >
-                <span>или перетяните на поле</span>
-            </div>
+            className={"dragZone " + (fileSelected ? 'active' : '')}
+            onDragOver={handleOndragOver}
+            onDrop={handleOndrop}
+          >
+            <span>or drag it to the field</span>
+          </div>
           <button
             className="sending__button-img"
             type="submit"
             onClick={onAvatarUp}>
-            <img src={send} alt="добавить файл" />
+            <img src={send} alt="add file" />
           </button>
         </form>
       </div>

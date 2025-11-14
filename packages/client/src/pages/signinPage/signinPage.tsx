@@ -11,36 +11,36 @@ import { signin, fetchOAuth } from "@/store/authSlice";
 import "./signinPage.scss";
 
 export const SigninPage: FC = () => {
-  const {handleChange, handleSubmit, values, errors} = useForm(submitForm, {login: "", password: ""}, validate);
+  const { handleChange, handleSubmit, values, errors } = useForm(submitForm, { login: "", password: "" }, validate);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { user } = useAuth();
-    
-   function submitForm() {
+
+  function submitForm() {
     dispatch(signin(values));
   }
 
   function handleOAuth() {
     dispatch(fetchOAuth());
   }
-  
+
   useEffect(() => {
     if (user) {
       navigate('/')
     }
   }, [user]);
-  
+
   return (
     <div className="auth">
       <Form onSubmit={handleSubmit}>
-        <h1 className="auth__title">Вход</h1>
-        <FormField type="text" name="login" value={values.login} label="Логин" onChange={handleChange} />
+        <h1 className="auth__title">Login</h1>
+        <FormField type="text" name="login" value={values.login} label="Login" onChange={handleChange} />
         {errors.login && <p className="auth__error">{errors.login}</p>}
-        <FormField type="password" name="password" value={values.password} label="Пароль" onChange={handleChange} />
+        <FormField type="password" name="password" value={values.password} label="Password" onChange={handleChange} />
         {errors.password && <p className="auth__error">{errors.password}</p>}
-        <Button className="auth__btn" type="submit">АВТОРИЗАЦИЯ</Button>
-        <Button className="auth__btn" onClick={handleOAuth}>АВТОРИЗАЦИЯ ЧЕРЕЗ ЯНДЕКС</Button>
-        <Link className="auth__link" to={`/signup`} >Нет Аккаунта? Зарегистрируйтесь</Link>
+        <Button className="auth__btn" type="submit">Login</Button>
+        <Button className="auth__btn" onClick={handleOAuth}>Login with Yandex</Button>
+        <Link className="auth__link" to={`/signup`} >Don't have an account? Sign up</Link>
       </Form>
     </div>
   )

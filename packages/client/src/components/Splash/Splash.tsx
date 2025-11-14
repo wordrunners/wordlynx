@@ -21,9 +21,9 @@ export const Splash = (): JSX.Element => {
   return (
     loading
       ? <section className="splash">
-          <div className="splash__circle"></div>
-          <h3 className="splash__title">Загрузка</h3>
-        </section>
-      : <Togglers/> 
+        <div className="splash__circle"></div>
+        <h3 className="splash__title">Loading...</h3>
+      </section>
+      : <Togglers />
   );
 };

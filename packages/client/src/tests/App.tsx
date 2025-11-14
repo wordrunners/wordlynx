@@ -11,6 +11,6 @@ export function App() {
 
     fetchServerData()
   }, [])
-  return <div className="App">Тестовый App для тестового теста Jest</div>
+  return <div className="App">Test App for Jest Test</div>
 }
 

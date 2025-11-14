@@ -37,42 +37,42 @@ export const BoardPage: FC = () => {
   if ((user) && (board)) {
     return (
       <section className="forum">
-        <LinkButton to='/boards' modifier='header-btn'>Назад</LinkButton>
+        <LinkButton to='/boards' modifier='header-btn'>Back</LinkButton>
         <div className="forum__wrapper">
           <h3 className="forum__topic-title">{board.title}</h3>
           <h4 className="forum__topic-desc">{board.description}</h4>
-          <div className="forum__comment-list"> 
+          <div className="forum__comment-list">
             {status !== 'FETCH_FULFILLED' ? (
-                <Loader />
-              ) : (
-                <>
-                  {comments?.length ? (
-                      <>
-                        {comments
-                          ?.filter(item => item.parent_id === null)
-                          .slice(0).reverse().map(comment => {
-                            return (
-                              <CommentBox
-                                key={`CommentBox=${comment.id}`}
-                                like={
-                                  likes?.find(
-                                    it => it.comment_id === comment.id
-                                  )?.isLike
-                                }
-                                comment={comment}
-                                userLogin={comment?.user_login}
-                                childComment={comments?.filter(
-                                  it => it.parent_id === comment.id
-                                )}
-                              />
-                            )
-                          })}
-                      </>
-                    ) : (
-                    <p className="forum__topic-desc">Комментариев нет</p>
-                  )}
-                </>
-              )}
+              <Loader />
+            ) : (
+              <>
+                {comments?.length ? (
+                  <>
+                    {comments
+                      ?.filter(item => item.parent_id === null)
+                      .slice(0).reverse().map(comment => {
+                        return (
+                          <CommentBox
+                            key={`CommentBox=${comment.id}`}
+                            like={
+                              likes?.find(
+                                it => it.comment_id === comment.id
+                              )?.isLike
+                            }
+                            comment={comment}
+                            userLogin={comment?.user_login}
+                            childComment={comments?.filter(
+                              it => it.parent_id === comment.id
+                            )}
+                          />
+                        )
+                      })}
+                  </>
+                ) : (
+                  <p className="forum__topic-desc">No comments</p>
+                )}
+              </>
+            )}
           </div>
           <FormBox
             parentId={null}

@@ -1,7 +1,7 @@
 import { App } from './App'
 import { render, screen } from '@testing-library/react'
 
-const appContent = 'Тестовый App для тестового теста Jest'
+const appContent = 'Test App for Jest Test'
 
 // @ts-ignore
 global.fetch = jest.fn(() =>

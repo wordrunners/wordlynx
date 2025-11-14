@@ -12,5 +12,5 @@ export const passwordAPI = async (requestData: PasswordRequestData) => {
   if (hasError(response)) {
     return response.reason
   }
-  return 'пароль изменен'
+  return 'password changed'
 }

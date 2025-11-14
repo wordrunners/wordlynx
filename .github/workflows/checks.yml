@@ -12,13 +12,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Initialize .env files and directories
+        run: node init.js
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - name: Install main deps
         run: yarn
-      - name: Initialize
-        run: yarn lerna bootstrap
       - name: Lint
         run: yarn lint
       - name: Test

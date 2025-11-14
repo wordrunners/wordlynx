@@ -13,11 +13,11 @@ type Props = {
   userLogin: string;
 }
 
-export const CommentBox: FC<Props> = ({like, comment, childComment, userLogin}): JSX.Element => {
+export const CommentBox: FC<Props> = ({ like, comment, childComment, userLogin }): JSX.Element => {
   const dispatch = useAppDispatch();
 
   const { user } = useAuth();
-  const {  status } = useAppSelector(selectBoardsData)
+  const { status } = useAppSelector(selectBoardsData)
   const formattedDate: string = format(new Date(comment?.createdAt), "dd-MM-yyyy, HH:mm");
 
   const clickLike = (value: boolean) => {
@@ -51,39 +51,39 @@ export const CommentBox: FC<Props> = ({like, comment, childComment, userLogin}):
             />
           </div>
           <p className='forum__text'>{comment.comment}</p>
-          
+
           {!comment.parent_id && (
             <p onClick={handleOpen} className='forum__comments-counter'>
-              {!open ?  (!childComment?.length ? 'Ответить' : 'Ответы: ' + childComment?.length) : 'Скрыть'}
+              {!open ? (!childComment?.length ? 'Reply' : 'Replies: ' + childComment?.length) : 'Hide'}
             </p>
           )}
 
           {open && (
             status !== 'FETCH_FULFILLED' ? (
-                <Loader />
-              ) : (
-                <>
-                  {childComment?.length ? (
-                    <div className='forum__answers'>
-                      Ответы:
-                      {childComment?.map(comment => {
-                        return (
-                          <div key={`comment-${comment.id}`}>
-                            <p className='forum__text forum__text_login'>{comment.user_login}</p>
-                            <p className='forum__text'>{comment.comment}</p>
-                          </div>
-                        )
-                      })}
-                    </div>
-                  ) : (
-                    null
-                  )}
-                  <FormBox
-                    parentId={comment.id}
-                    boardId={comment.board_id}
-                  />
-                </>
-              )
+              <Loader />
+            ) : (
+              <>
+                {childComment?.length ? (
+                  <div className='forum__answers'>
+                    Replies:
+                    {childComment?.map(comment => {
+                      return (
+                        <div key={`comment-${comment.id}`}>
+                          <p className='forum__text forum__text_login'>{comment.user_login}</p>
+                          <p className='forum__text'>{comment.comment}</p>
+                        </div>
+                      )
+                    })}
+                  </div>
+                ) : (
+                  null
+                )}
+                <FormBox
+                  parentId={comment.id}
+                  boardId={comment.board_id}
+                />
+              </>
+            )
           )}
         </>
       )}
